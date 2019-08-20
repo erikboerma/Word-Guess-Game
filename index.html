@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // Band names or singers famous in the 80's
+        var bandNames = ["REM", "Prince", "Rush", "Talking Heads", "Metallica", "Bruce Springsteen", "U2", "Michael Jackson"];
+        var wins;
+        var lettersGuessed;
+        var guesses;
+        var chosenName;
+
+        // user presses space bar  and generates a random bandName
+        document.onkeyup = function (event) {
+            if (event.key === ' '){
+
+            // Randomly computer selects an array
+            var chosenName = bandNames[Math.floor(Math.random() * bandNames.length)];
+            console.log(chosenName);
+            // Calculate the amount of letters in the array
+            var nameLength = chosenName.length;
+            console.log(nameLength);
+            }
+            //this is a formality so I can see what is generated/pressed.
+            else {
+                console.log(event.key);
+            }
+            
+
+            // take the raondomly chosen band name and build out the ability to guess letters
+            // create a function that repeats, checking keys against the word selected
+
+            var letterGuessed = event.keyCode;
+            if (letterGuessed === chosenName.indexOf){
+                console.log("Correct guess");
+            
+            }
+            else {
+                console.log("Incorrect Guess, try again!");
+            }
+    
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
