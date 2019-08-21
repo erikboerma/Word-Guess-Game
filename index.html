@@ -17,37 +17,50 @@
         var lettersGuessed;
         var guesses;
         var chosenName;
+        var nameLength;
 
         // user presses space bar  and generates a random bandName
+
+        document.onkeyup = function (event) { // issue is here that the space bar keeps re running the script.
+            if (event.key === ' ') {
+
+                // Randomly computer selects an array
+                var chosenName = bandNames[Math.floor(Math.random() * bandNames.length)];
+                console.log(chosenName);
+                // Calculate the amount of letters in the array
+                var nameLength = chosenName.length;
+                console.log(nameLength);
+            }
+            // sets the expected amount of letters to be guessed
+
+            for (var i = 0; i < nameLength; i++) {
+                document.write('-');
+            }
+        }
+        // split()  ---- look into for help with spiltting up the chosenWord***(*&)
+
+        // trying to take the above and turn it into an array
+        // var chosenName = [chosenName];
+        // for (var i  = 0; i < chosenName.length; i++){
+        //     document.write('-');
+        // }
+        // break apart the initial fucntion and start a new funciton *****(*&@(#*&(*@#&(*@&#))))
+
+
+
+        // take the raondomly chosen band name and build out the ability to guess letters
+        // create a function that repeats, checking keys against the word selected
         document.onkeyup = function (event) {
-            if (event.key === ' '){
-
-            // Randomly computer selects an array
-            var chosenName = bandNames[Math.floor(Math.random() * bandNames.length)];
-            console.log(chosenName);
-            // Calculate the amount of letters in the array
-            var nameLength = chosenName.length;
-            console.log(nameLength);
-            }
-            //this is a formality so I can see what is generated/pressed.
-            else {
-                console.log(event.key);
-            }
-            
-
-            // take the raondomly chosen band name and build out the ability to guess letters
-            // create a function that repeats, checking keys against the word selected
-
             var letterGuessed = event.keyCode;
-            if (letterGuessed === chosenName.indexOf){
+            if (letterGuessed === chosenName.indexOf) {
                 console.log("Correct guess");
-            
+
             }
             else {
                 console.log("Incorrect Guess, try again!");
             }
-    
         }
+
 
 
 
