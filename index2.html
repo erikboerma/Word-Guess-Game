@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="text/javascript" href ="assets/javascript/game.js"> -->
 </head>
 <body>
     <div class="container" style= "background-color: black; color: white;">
@@ -25,17 +26,17 @@
             </div>
             <!-- right column  -->
             <div class="col-md-6 border border-primary">
-                <div> <h3>Press a key to start!</h3></div>
-                <div><h3>Wins: <span><!--Wins go here--></span></h3></div>
-                <div><h3>Current word:</h3></div>
+                <div> <h3>Guess a letter to start!</h3></div>
+                <div><h3>Wins: <span id = "wins"><!--Wins go here--></span></h3></div>
+                <div><h3>Current word: <span id="chosenWord"></span></h3></div>
                 <div><span><!--Array goes here--></span></div>
-                <div><h3>Number of guesses left:<span><!--Guess left goes here--></span></h3></div>
-                <div><h3>Letters guessed:</h3><span><!--Letters guessed go here--></span></div>
+                <div><h3>Number of guesses left:<span id = "guessesLeft"><!--Guess left goes here--></span></h3></div>
+                <div><h3>Incorrect letters guessed:</h3><span id = "lettersGuessed"><!--Letters guessed go here--></span></div>
 
             </div>
         </div>
 
-
+    <script src="assets/javascript/game.js"></script>
 
     </div>
 </body>

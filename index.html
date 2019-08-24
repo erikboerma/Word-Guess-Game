@@ -14,9 +14,11 @@
         // Band names or singers famous in the 80's
         var bandNames = ["rem", "prince", "rush", "metallica", "u2", "queen", "aerosmith"];
         var chosenName = "";
-        var nameLength;
+        var nameLength = 0;
         var newArray = [];
         var emptyWord = [];
+        var incorrectGuess = [];
+        var incorrect = 0;
         var wins;
         var lettersGuessed;
         var guesses;
@@ -25,72 +27,65 @@
         function startGame() {
             // Randomly computer selects an array
             chosenName = bandNames[Math.floor(Math.random() * bandNames.length)];
+            console.log(chosenName);
+            // Calculate the amount of letters in the array
+            nameLength = chosenName.length;
             // make chosenname into an array
             newArray = chosenName.split('');
             console.log(newArray);
-            // Calculate the amount of letters in the array
-            nameLength = chosenName.length;
             // sets the expected amount of letters to be guessed
             for (var i = 0; i < nameLength; i++) {
                 emptyWord.push('-');
-                document.write(emptyWord)
             }
+            document.write(emptyWord);
         }
 
         // takes the word, checks if key stroke is in word
         function wordCheck(keyPressed) {
+            var letterInWord = false;
             for (var j = 0; j < nameLength; j++) {
                 if (newArray[j] === keyPressed) {
+                    letterInWord = true;
                     console.log(true);
                 }
-                // else (newArray[j] !== keyPressed);{
-                //     console.log(false);
-                // }
-
             }
+
+            if (letterInWord) {
+                for (var i = 0; i < nameLength; i++) {
+                    if (newArray[i] === keyPressed) {
+                        chosenName[i] = keyPressed;
+                    }
+                    document.write(chosenName[i]);
+                }
+            }
+            
+            
+            else {
+                newArray[i] !== keyPressed;
+                incorrectGuess[i] = keyPressed;
+                console.log(incorrectGuess[i]);
+                    }
+                }
+            
+        
+
+
+
+        startGame()
+
+        // function to capture the letter pressed
+        document.onkeyup = function (event) {
+            var keyPressed = (event.key).toLowerCase();
+            console.log(keyPressed);
+
+            wordCheck(keyPressed);
+
         }
 
 
-            startGame()
 
-            // function to capture the letter pressed
-            document.onkeyup = function (event) {
-                var keyPressed = (event.key).toLowerCase();
-                console.log(keyPressed);
-
-                wordCheck(keyPressed);
-
-            }
-
-
-
-        // // trying to take the above and turn it into an array
-        // var chosenName = [chosenName];
-        // for (var i  = 0; i < chosenName.length; i++){
-        //     document.write('-');
-        // }
-        // // break apart the initial fucntion and start a new funciton *****(*&@(#*&(*@#&(*@&#))))
-
-
-
-        // // take the raondomly chosen band name and build out the ability to guess letters
-        // // create a function that repeats, checking keys against the word selected
-
-        // document.addEventListener(onkeyup, function() {
-        // document.onkeyup = function (event) {
-
-        //     var letterGuessed = event.keyCode;
-
-        //     if (letterGuessed === chosenName.indexOf) {
-        //         console.log("Correct guess");
-
-        //     }
-        //     else {
-        //         console.log("Incorrect Guess, try again!");
-        // }
-        // }
-        // });
-
+        
+      
 
     </script>
 
